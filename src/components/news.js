@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Spinner from './spinner';
 import NewsComponent from './newsComponent'
 
+import '../App.css';
+
 export default class news extends Component {
     // eslint-disable-next-line no-unreachable
     articles = []
@@ -12,7 +14,8 @@ export default class news extends Component {
         this.state = {
             articles: this.articles,
             loading: false,
-            page:1
+            page:1,
+            totalResults:0
         }
     }
 
@@ -45,7 +48,7 @@ export default class news extends Component {
   render() {
     return (
       <div>
-        <div className="container my-3">
+        <div className="container main-news">
             <h1 className="text-center">{"Top headlines of " + this.props.newsType + " news"} </h1>
             {this.state.loading && <Spinner/>}
             <div className="row">

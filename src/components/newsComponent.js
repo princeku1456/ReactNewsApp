@@ -12,7 +12,7 @@ export default class newsComponent extends Component {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <div className="badge">
-                    <span class="badge rounded-pill bg-danger">
+                    <span className="badge rounded-pill bg-danger">
                         {source}
                     </span>
                 </div>

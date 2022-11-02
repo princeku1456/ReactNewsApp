@@ -4,9 +4,9 @@ export default class navbar extends Component {
   render() {
     return (
       <div>
-           <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+           <nav className="navbar fixed-top navbar-expand-lg bg-dark navbar-dark">
               <div className="container-fluid">
-                <a className="navbar-brand" href="/">Navbar</a>
+                <a className="navbar-brand" href="/">NewsCenter</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>
