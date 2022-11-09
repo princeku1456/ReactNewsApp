@@ -53,12 +53,13 @@
 
 
 
-import './App.css';
+import './App.scss';
 
 import React, {useState} from 'react'
 
 import Navbar from './components/navbar'
 import News from './components/news'
+// import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   BrowserRouter as Router,
@@ -70,12 +71,14 @@ import LoadingBar from 'react-top-loading-bar';
 
 
 
-export default function App() {
+const App=()=>{
 
   const pageSize=16;
   const country="us";
   const apiKey = '9cbd5b0c2d474a35b90ac1a242b0d0df';
+  // eslint-disable-next-line no-lone-blocks
   {/* 9cbd5b0c2d474a35b90ac1a242b0d0df */}
+         // eslint-disable-next-line no-lone-blocks
          {/* 77ca9bfef0744275b6724319a9db3b5b */}
   const [progress, setProgress] = useState(0)
 
@@ -103,3 +106,4 @@ export default function App() {
 }
 
 
+export default App;

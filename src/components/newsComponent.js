@@ -29,7 +29,7 @@
 
 import React from 'react'
 import '../App.js'
-
+import '../App.scss';
 const NewsComponent=(props)=> {
     let {title, description, imageUrl, newsUrl,author,publishedAt,source} = props;
   return (

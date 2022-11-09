@@ -1,0 +1,27 @@
+
+$dark: #6610f2;
+$danger: #198754;
+
+
+
+
+
+
+// import scss
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+
+.badge{
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right:0;
+  top: 0;
+}
+
+.main-news{
+  margin-top: 70px;
+}
+
+
+

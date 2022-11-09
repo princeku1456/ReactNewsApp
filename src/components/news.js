@@ -80,7 +80,7 @@ import React,{useEffect, useState} from 'react'
 import Spinner from './spinner';
 import NewsComponent from './newsComponent'
 
-import '../App.css';
+import '../App.scss';
 
 const News = (props)=>{
     const [articles, setArticles] = useState([])
