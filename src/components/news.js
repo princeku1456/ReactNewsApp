@@ -77,6 +77,8 @@
 
 import React,{useEffect, useState} from 'react'
 
+import axios from 'axios';
+
 import Spinner from './spinner';
 import NewsComponent from './newsComponent'
 
@@ -87,19 +89,24 @@ const News = (props)=>{
     const [loading, setLoading] = useState(true)
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
-    
     const updateNews = async()=>{
         // props.setProgress(10);
-        let url=`https://newsapi.org/v2/top-headlines?apiKey=${props.apiKey}&country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
+        // let url=`https://newsapi.org/v2/top-headlines?apiKey=${props.apiKey}&country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
+        // setLoading(true);
+        // // props.setProgress(30);
+        // let data= await fetch(url);
+        // let parsedData= await data.json();
+        // // props.setProgress(70);
+        // setArticles(parsedData.articles);
+        // setTotalResults(parsedData.totalResults)
+        // setLoading(false);
+        // // props.setProgress(100);
+        let url = `https://newsapi.org/v2/top-headlines?apiKey=${props.apiKey}&country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
         setLoading(true);
-        // props.setProgress(30);
-        let data= await fetch(url);
-        let parsedData= await data.json();
-        // props.setProgress(70);
-        setArticles(parsedData.articles);
-        setTotalResults(parsedData.totalResults)
+        let data = await axios.get(url);
+        setArticles(data.data.articles);
+        setTotalResults(data.data.totalResults);
         setLoading(false);
-        // props.setProgress(100);
     }
 
 
