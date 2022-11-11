@@ -59,7 +59,7 @@ import React, {useState} from 'react'
 
 import Navbar from './components/navbar'
 import News from './components/news'
-// import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import {
   BrowserRouter as Router,
@@ -92,13 +92,13 @@ const App=()=>{
               height={3}
             />
             <Routes>
-                <Route path="/" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"general"} category={"general"}/>}/>
-                <Route path="/business" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"business"} category={"business"}/>}/>
-                <Route path="/entertainment" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"entertainment"} category={"entertainment"}/>}/>
-                <Route path="/health" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"health"} category={"health"}/>}/>
-                <Route path="/science" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"science"} category={"science"}/>}/>
-                <Route path="/sports" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"sports"} category={"sports"}/>}/>
-                <Route path="/technology" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} newsType={"technology"} category={"technology"}/>}/>
+                <Route path="/" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"general"}/>}/>
+                <Route path="/business" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"business"}/>}/>
+                <Route path="/entertainment" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"entertainment"}/>}/>
+                <Route path="/health" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"health"}/>}/>
+                <Route path="/science" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"science"}/>}/>
+                <Route path="/sports" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"sports"}/>}/>
+                <Route path="/technology" element={<News setProgress={ setProgress} apiKey={ apiKey}  pageSize={ pageSize} country={ country} category={"technology"}/>}/>
             </Routes>
           </Router>
     </div>

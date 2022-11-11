@@ -1,6 +1,7 @@
 
 $dark: #6610f2;
-$danger: #198754;
+// $dark: #000000;
+$danger: #ff002b;
 
 
 
@@ -23,5 +24,8 @@ $danger: #198754;
   margin-top: 70px;
 }
 
+.border-card:hover{
+    border: 1px solid $dark;
+}
 
 

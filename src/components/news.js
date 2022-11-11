@@ -89,17 +89,17 @@ const News = (props)=>{
     const [totalResults, setTotalResults] = useState(0)
     
     const updateNews = async()=>{
-        props.setProgress(10);
+        // props.setProgress(10);
         let url=`https://newsapi.org/v2/top-headlines?apiKey=${props.apiKey}&country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
         setLoading(true);
-        props.setProgress(30);
+        // props.setProgress(30);
         let data= await fetch(url);
         let parsedData= await data.json();
-        props.setProgress(70);
+        // props.setProgress(70);
         setArticles(parsedData.articles);
         setTotalResults(parsedData.totalResults)
         setLoading(false);
-        props.setProgress(100);
+        // props.setProgress(100);
     }
 
 
@@ -121,7 +121,7 @@ const News = (props)=>{
   return (
     <div>
         <div className="container main-news">
-            <h1 className="text-center">{"Top headlines of " + props.newsType + " news"} </h1>
+            <h1 className="text-center">{"Top headlines of " + props.category + " news"} </h1>
             {loading && <Spinner/>}
             <div className="row">
                 {!loading && articles.map((element)=>{
@@ -132,8 +132,8 @@ const News = (props)=>{
             </div>
         </div>
         <div className="container my-3 d-flex justify-content-between">
-            <button disabled={page<=1} className="btn btn-dark" onClick={handlePrevclick}>&larr; Previous</button>
-            <button disabled={page+1 >= Math.ceil(totalResults/props.pageSize)} className="btn btn-dark" onClick={handleNextclick}>Next &rarr;</button>
+            <button data-testid="button-1" disabled={page<=1} className="btn btn-dark" onClick={handlePrevclick}>&larr; Previous</button>
+            <button data-testid="button-2" disabled={page+1 >= Math.ceil(totalResults/props.pageSize)} className="btn btn-dark" onClick={handleNextclick}>Next &rarr;</button>
         </div>
     </div>
   )

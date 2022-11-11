@@ -34,8 +34,8 @@ const NewsComponent=(props)=> {
     let {title, description, imageUrl, newsUrl,author,publishedAt,source} = props;
   return (
     <div>
-      <div className="card">
-            <img src={imageUrl?imageUrl:"https://clipartion.com/wp-content/uploads/2015/11/free-retro-clipart-of-a-man-reading-interesting-news-from-a-newspaper.jpg"} className="card-img-top" alt=""/>
+      <div className="card border-card">
+            <img data-testid="backgroundImage" src={imageUrl?imageUrl:"https://clipartion.com/wp-content/uploads/2015/11/free-retro-clipart-of-a-man-reading-interesting-news-from-a-newspaper.jpg"} className="card-img-top" alt=""/>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <div className="badge">
