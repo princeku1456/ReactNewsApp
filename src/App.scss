@@ -1,8 +1,12 @@
 
 $dark: #6610f2;
-// $dark: #000000;
+// $dark: #fc0000;
 $danger: #ff002b;
 
+$theme-colors: (
+  "dark": $dark,
+  "danger": $danger
+);
 
 
 

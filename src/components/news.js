@@ -76,13 +76,15 @@
 
 
 import React,{useEffect, useState} from 'react'
+import PropTypes from 'prop-types'
 
-import axios from 'axios';
-
-import Spinner from './spinner';
+import axios from 'axios'
+import Spinner from './spinner' 
 import NewsComponent from './newsComponent'
 
 import '../App.scss';
+import { Navbar } from 'react-bootstrap'
+
 
 const News = (props)=>{
     const [articles, setArticles] = useState([])
@@ -90,7 +92,7 @@ const News = (props)=>{
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
     const updateNews = async()=>{
-        // props.setProgress(10);
+        // // props.setProgress(10);
         // let url=`https://newsapi.org/v2/top-headlines?apiKey=${props.apiKey}&country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
         // setLoading(true);
         // // props.setProgress(30);
@@ -100,13 +102,17 @@ const News = (props)=>{
         // setArticles(parsedData.articles);
         // setTotalResults(parsedData.totalResults)
         // setLoading(false);
-        // // props.setProgress(100);
+        // props.setProgress(100);
+        props.setProgress(10);
         let url = `https://newsapi.org/v2/top-headlines?apiKey=${props.apiKey}&country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
         setLoading(true);
-        let data = await axios.get(url);
-        setArticles(data.data.articles);
-        setTotalResults(data.data.totalResults);
+        props.setProgress(30);
+        let parsedData = await axios.get(url);
+        props.setProgress(70);
+        setArticles(parsedData.data.articles);
+        setTotalResults(parsedData.data.totalResults);
         setLoading(false);
+        props.setProgress(100);
     }
 
 
@@ -144,6 +150,20 @@ const News = (props)=>{
         </div>
     </div>
   )
+}
+
+Navbar.PropTypes = {
+    category: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    apiKey: PropTypes.string.isRequired,
+}
+
+News.defaultProps = {
+    country:'in',
+    pageSize:8,
+    category:'general',
+    apiKey:'77ca9bfef0744275b6724319a9db3b5b'
 }
 
 export default News;

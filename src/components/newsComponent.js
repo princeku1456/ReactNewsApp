@@ -28,8 +28,9 @@
 
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import '../App.js'
-import '../App.scss';
+import '../App.scss'
 const NewsComponent=(props)=> {
     let {title, description, imageUrl, newsUrl,author,publishedAt,source} = props;
   return (
@@ -50,6 +51,16 @@ const NewsComponent=(props)=> {
         </div>
     </div>
   )
+}
+
+NewsComponent.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    imageUrl: PropTypes.string,
+    newsUrl: PropTypes.string,
+    author: PropTypes.string,
+    publishedAt: PropTypes.string,
+    source: PropTypes.string
 }
 
 export default NewsComponent;
